@@ -1,7 +1,7 @@
 module SessionCurrentUser
   extend ActiveSupport::Concern
 
-  # Extracts the current user ID from the session
+  # Extracts the current user ID from the session (already commented! how nice.)
   def session_current_user_id
     return unless session["warden.user.user.key"]
 

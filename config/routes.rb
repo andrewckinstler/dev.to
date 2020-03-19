@@ -362,7 +362,9 @@ Rails.application.routes.draw do
 
   get "/pod", to: "podcast_episodes#index"
   get "/podcasts", to: redirect("pod")
+  # reading list route
   get "/readinglist" => "reading_list_items#index"
+  # archive route
   get "/readinglist/:view" => "reading_list_items#index", :constraints => { view: /archive/ }
 
   get "/feed" => "articles#feed", :as => "feed", :defaults => { format: "rss" }

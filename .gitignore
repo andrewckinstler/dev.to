@@ -72,3 +72,9 @@ docs/.static/api/
 
 # ES docker volume
 docker_data/
+
+#elasticsearch
+elasticsearch-7.5.2
+elasticsearch-oss-7.5.2-darwin-x86_64.tar.gz
+elasticsearch-oss-7.5.2-darwin-x86_64.tar.gz.sha512
+
