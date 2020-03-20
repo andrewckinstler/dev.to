@@ -9,11 +9,14 @@ class ReadingListItemsController < ApplicationController
   end
 
   def update
+    # a Reaction can be reading_list addition, or a literal reaction to an article (positve (maybe negative))
     @reaction = Reaction.find(params[:id])
+    # return unauth json if not valid user id/session
     not_authorized if @reaction.user_id != session_current_user_id
-
+    # save reactions
     @reaction.status = params[:current_status] == "archived" ? "valid" : "archived"
     @reaction.save
+    # response without content, only headers
     head :ok
   end
 
@@ -28,6 +31,7 @@ class ReadingListItemsController < ApplicationController
     )
   end
 
+  # helper methods showing archived or valid articles
   def set_view
     @view = if params[:view] == "archive"
               "archived"

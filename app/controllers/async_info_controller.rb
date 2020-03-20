@@ -1,3 +1,4 @@
+# looks like this is cached data, that initializes the reading list poro
 class AsyncInfoController < ApplicationController
   include Devise::Controllers::Rememberable
   # No pundit policy. All actions are unrestricted.

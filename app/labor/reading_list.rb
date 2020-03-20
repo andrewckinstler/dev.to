@@ -1,3 +1,4 @@
+# PORO initialized by async-controller
 class ReadingList
   attr_accessor :user
   def initialize(user)
