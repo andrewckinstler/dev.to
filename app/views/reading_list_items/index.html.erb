@@ -17,8 +17,10 @@
   <meta name="twitter:description" content="Reading List for dev.to">
 <% end %>
 
+<%# container for page%>
 <div class="home">
   <div class="item-list-container" id="reading-list" data-algolia-key="<%= @secured_algolia_key %>" data-view="<%= @view %>">
   </div>
 </div>
+<%# load javscipt pack %>
 <%= javascript_pack_tag "readingList", defer: true %>

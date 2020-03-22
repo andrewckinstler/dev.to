@@ -16,11 +16,13 @@ import { ItemListItemArchiveButton } from '../src/components/ItemList/ItemListIt
 import { ItemListLoadMoreButton } from '../src/components/ItemList/ItemListLoadMoreButton';
 import { ItemListTags } from '../src/components/ItemList/ItemListTags';
 
+// endpoints
 const STATUS_VIEW_VALID = 'valid';
 const STATUS_VIEW_ARCHIVED = 'archived';
 const READING_LIST_ARCHIVE_PATH = '/readinglist/archive';
 const READING_LIST_PATH = '/readinglist';
 
+// filter by tag
 const FilterText = ({ selectedTags, query, value }) => {
   return (
     <h1>
@@ -31,7 +33,9 @@ const FilterText = ({ selectedTags, query, value }) => {
   );
 };
 
+// reading_list inherits from component class (i think)
 export class ReadingList extends Component {
+  // like an initialize
   constructor(props) {
     super(props);
 

@@ -1,16 +1,14 @@
 # PORO initialized by async-controller
-class ReadingList
+class CollectList
   attr_accessor :user
   def initialize(user)
     @user = user
   end
 
   def get
-    Article.
-      joins(:reactions).
-      includes(:user).
-      where(reactions: reaction_criteria).
-      order("reactions.created_at DESC")
+    Collection.
+      joins(:articles).
+      includes(:user)
   end
 
   def cached_ids_of_articles

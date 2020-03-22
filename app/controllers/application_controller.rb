@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError, "Routing Error"
   end
 
+  # authorization error or not authorized
   def not_authorized
     render json: "Error: not authorized", status: :unauthorized
     raise NotAuthorizedError, "Unauthorized"

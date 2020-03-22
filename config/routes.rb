@@ -202,6 +202,8 @@ Rails.application.routes.draw do
     get "purchase", on: :collection, to: "credits#new"
   end
   resources :buffer_updates, only: [:create]
+  resources :collections, only: [:index]
+  # odd that this id here
   resources :reading_list_items, only: [:update]
   resources :poll_votes, only: %i[show create]
   resources :poll_skips, only: [:create]
@@ -362,7 +364,9 @@ Rails.application.routes.draw do
 
   get "/pod", to: "podcast_episodes#index"
   get "/podcasts", to: redirect("pod")
+  # reading list route
   get "/readinglist" => "reading_list_items#index"
+  # archive route
   get "/readinglist/:view" => "reading_list_items#index", :constraints => { view: /archive/ }
 
   get "/feed" => "articles#feed", :as => "feed", :defaults => { format: "rss" }
