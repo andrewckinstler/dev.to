@@ -202,6 +202,7 @@ Rails.application.routes.draw do
     get "purchase", on: :collection, to: "credits#new"
   end
   resources :buffer_updates, only: [:create]
+  resources :collections, only: [:index]
   # odd that this id here
   resources :reading_list_items, only: [:update]
   resources :poll_votes, only: %i[show create]

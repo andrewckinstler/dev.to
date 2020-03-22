@@ -1,6 +1,6 @@
 class ReadingListItemsController < ApplicationController
   def index
-    # informing the view which css file to you (styling)
+    # informing the view which css file to style (styling)
     @reading_list_items_index = true
     # depending on whether the user wants to see current or archived reading list (param sets)
     set_view
